@@ -94,21 +94,19 @@
 		});
 	}
 	var links = document.getElementsByTagName('a');
-	console.log(links);
 	var j;
 	for (j = 0; j < links.length; j++) {
 		links[j].addEventListener('click', function (e) {
 			var hrefVal = this.attributes.href.value.slice(1);
 			var secNumber = document.getElementById(hrefVal);
 			var currentNode = secNumber;
-			secNumber.nextElementSibling.classList.add('show');
+			secNumber.nextElementSibling.classList.add('show','highlight');
 			while(currentNode.parentNode != document.body){
 				if(currentNode.parentNode.className == "panel"){
-					currentNode.parentNode.classList.add('show');
+					currentNode.parentNode.classList.toggle('show');
 				}
 				currentNode = currentNode.parentNode;
 			}
-			// secNumber.parentNode.classList.add('show');
 		});
 	}
 </script>

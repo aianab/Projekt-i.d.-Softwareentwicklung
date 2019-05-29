@@ -10,7 +10,7 @@ button.accordion {
   font-size: 15px;
   transition: 0.4s;
 }
-.active, .accordion:hover {
+.active, .accordion:hover {  
   background-color: #ccc;
 }
 .panel {
@@ -22,4 +22,21 @@ button.accordion {
 
 .show {
   display: block;
+}
+
+.highlight {
+  background-color: white;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 4s
+}
+@-webkit-keyframes example {
+  from {background-color: white;}
+  to {background-color: #7FFFD4;}
+}
+
+@keyframes example {
+  from {background-color: white;}
+  to {background-color: #7FFFD4;}
 }
