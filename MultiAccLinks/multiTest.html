@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div>
-		<button class="accordion">Section 1</button>
+		<button class="accordion">Section 1. Student</button>
 		<div class="panel">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 			<button id="sec11" class="accordion">Section 1.1</button>
@@ -99,14 +99,17 @@
 		links[j].addEventListener('click', function (e) {
 			var hrefVal = this.attributes.href.value.slice(1);
 			var secNumber = document.getElementById(hrefVal);
+			var nextSibClassList = secNumber.nextElementSibling.classList;
+			nextSibClassList.add('show','highlight');
+			setTimeout(function(){nextSibClassList.remove('highlight');}, 3000);
 			var currentNode = secNumber;
-			secNumber.nextElementSibling.classList.add('show','highlight');
 			while(currentNode.parentNode != document.body){
-				if(currentNode.parentNode.className == "panel"){
-					currentNode.parentNode.classList.toggle('show');
-				}
-				currentNode = currentNode.parentNode;
+			if(currentNode.parentNode.className == "panel"){
+				currentNode.parentNode.classList.toggle('show');
+			}
+			currentNode = currentNode.parentNode;
 			}
 		});
 	}
+
 </script>
